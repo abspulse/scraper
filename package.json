@@ -4,7 +4,8 @@
   "description": "Example Node Server w/ Babel",
   "main": "lib/index.js",
   "scripts": {
-    "start": "nodemon lib/index.js --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon lib/index.js --exec babel-node",
+    "start:crawl": "nodemon lib/crawl.js --exec babel-node",
     "build": "babel lib -d dist",
     "serve": "node dist/index.js",
     "test": "mocha --compilers js:babel-register"
@@ -18,5 +19,11 @@
     "babel-register": "^6.11.6",
     "mocha": "^3.0.1",
     "nodemon": "^1.10.0"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "mongoose": "^4.7.4",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
   }
 }
