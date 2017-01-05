@@ -1,12 +1,10 @@
-docker network create -d overlay tor
+docker network create -d overlay mobile
 
 docker service create \
 --name tor \
 --publish 8118:8118 \
---network tor \
+--network mobile \
 petergombos/tor
-
-docker network create -d overlay mobile
 
 docker service create \
 --name mongo \
@@ -14,3 +12,11 @@ docker service create \
 --mount type=bind,source=/home/pepe/projects/mobile/db,destination=/data/db \
 --network mobile \
 mongo:3.2
+
+docker service create \
+--name pulse \
+--publish 3000:3000 \
+--network mobile \
+--env MONGO=mongo \
+--env PROXY_URL=http://tor:8118 \
+petergombos/pulse
