@@ -1,16 +1,15 @@
 {
-  "name": "example-node-server",
-  "version": "1.0.0",
-  "description": "Example Node Server w/ Babel",
+  "name": "mobile-scraper",
+  "version": "0.1.0",
+  "description": "Supercharging car dealerships",
   "main": "lib/index.js",
   "scripts": {
     "start": "nodemon lib/index.js --exec babel-node",
-    "start:crawl": "nodemon lib/crawl.js --exec babel-node",
     "build": "babel lib -d dist",
     "serve": "node dist/index.js",
     "test": "mocha --compilers js:babel-register"
   },
-  "author": "James Kyle <me@thejameskyle.com>",
+  "author": "Pepe G <pepegombos@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.11.4",

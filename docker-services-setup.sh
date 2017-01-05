@@ -1,4 +1,4 @@
-docker network create tor
+docker network create -d overlay tor
 
 docker service create \
 --name tor \
@@ -6,7 +6,7 @@ docker service create \
 --network tor \
 petergombos/tor
 
-docker network create mobile
+docker network create -d overlay mobile
 
 docker service create \
 --name mongo \
