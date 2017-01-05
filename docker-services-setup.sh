@@ -11,6 +11,6 @@ docker network create -d overlay mobile
 docker service create \
 --name mongo \
 --publish 27017:27017 \
---mount type=bind,source=/root/mobile/db,destination=/data/db \
+--mount type=bind,source=/home/pepe/projects/mobile/db,destination=/data/db \
 --network mobile \
 mongo:3.2
