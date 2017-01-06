@@ -19,5 +19,5 @@ docker service create \
 --network mobile \
 --env MONGO=mongo \
 --env PROXY_URL=http://tor:8118 \
---env SENDGRID_API_KEY=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 \
+--env SENDGRID_API_KEY=APIKEY \
 petergombos/pulse
